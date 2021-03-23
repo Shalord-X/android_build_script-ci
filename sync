@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MANIFEST=https://github.com/ResurrectionRemix/platform_manifest.git
-BRANCH=default
+BRANCH=pie
 
 mkdir -p /tmp/rom
 cd /tmp/rom
