@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MANIFEST=https://github.com/ResurrectionRemix/platform_manifest.git
-BRANCH=Q
+MANIFEST=https://github.com/Project-Fluid/manifest.git
+BRANCH=fluid-11
 
 mkdir -p /tmp/rom
 cd /tmp/rom
