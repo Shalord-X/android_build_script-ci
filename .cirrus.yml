@@ -10,6 +10,8 @@ task:
       image: apon77/aosp:latest
       cpu: 16
       memory: 24G
+    neofetch_script:
+      - ./neofetch
     download_ccache_script:
       - ./download_ccache
     sync_script:
