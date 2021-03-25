@@ -18,9 +18,9 @@ task:
       - ./specification
     htop_script:
       - ./htop
-	download_ccache_script:
+    download_ccache_script:
       - ./download_ccache
-	sync_script:
+    sync_script:
       - ./sync
     build_script:
       - ./build
