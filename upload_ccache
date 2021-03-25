@@ -10,8 +10,8 @@ com ()
     tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz ccache
 }
 
-time com ccache-rr-8.6.7 1 # Compression level 1, its enough
+time com ccache-havoc-4.3-certus 1 # Compression level 1, its enough
 
 mkdir -p ~/.config/rclone
 echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
-time rclone copy ccache-rr-8.6.7.tar.gz remote:/ccache -P # apon is my rclone config name, ccache/ci2 is where ccache will be saved in my cloud, use yours one
+time rclone copy ccache-havoc-4.3-certus.tar.gz remote:/ccache -P # apon is my rclone config name, ccache/ci2 is where ccache will be saved in my cloud, use yours one
