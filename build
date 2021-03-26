@@ -21,9 +21,9 @@ up(){
 }
 
 make_metalava(){
-	make api-stubs-docs -j8
-	make system-api-stubs-docs -j8
-	make test-api-stubs-docs -j8
+	make api-stubs-docs
+	make system-api-stubs-docs
+	make test-api-stubs-docs
 }
 
 make_rom(){
