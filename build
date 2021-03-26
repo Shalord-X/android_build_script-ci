@@ -17,7 +17,7 @@ ccache -z
 upload_rom(){
 	mkdir -p ~/.config/rclone
 	echo "$rclone_config" > ~/.config/rclone/rclone.conf
-	time rclone copy out/target/product/certus/*zip remote:/roms -P
+	time rclone copy out/target/product/certus/*zip shalordx:/roms -P
 }
 
 make_metalava(){
