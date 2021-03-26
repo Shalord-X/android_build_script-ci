@@ -15,7 +15,9 @@ ccache -o compression=true
 ccache -z
 
 up(){
-	curl --upload-file $1 https://transfer.sh/
+	mkdir -p ~/.config/rclone
+	echo "$rclone_config" > ~/.config/rclone/rclone.conf
+	time rclone copy out/target/product/certus/*zip remote:/roms -P
 }
 
 make_metalava(){
@@ -25,7 +27,7 @@ make_metalava(){
 }
 
 make_rom(){
-	make blissify -j16
+	make blissify -j30
 	zip=$(up out/target/product/certus/*zip)
 	echo " "
 	echo "$zip"
