@@ -27,7 +27,7 @@ make_metalava(){
 }
 
 make_rom(){
-	make blissify -j8
+	make blissify -j16
 }
 
 make_metalava
