@@ -1,7 +1,7 @@
 env: # Environt variable to pass to all tasks
     CIRRUS_CLONE_DEPTH: 1 # No need to clone with whole history
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone repo
-    rclone_config: ""
+    rclone_config: "ENCRYPTED[6746c1a02d1aa14e3ac8b48f90139bb2598ec2a20ec06145e7efc812f4e1779a9013120c61489d52eb4a3defd2c9b0de]"
 
 task:
     name: Rom-Builder-for-certus
