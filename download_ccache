@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "Downloading previous ccache . . . . . ."
-url=https://shiny-dust-c4e8.unnamed877.workers.dev/ccache-havoc-4.3-certus.tar.gz
+url=https://shiny-dust-c4e8.unnamed877.workers.dev/ccache-bliss-r-certus.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
-time tar xf ccache-havoc-4.3-certus.tar.gz
-rm -rf ccache-havoc-4.3-certus.tar.gz
+time tar xf ccache-bliss-r-certus.tar.gz
+rm -rf ccache-bliss-r-certus.tar.gz
