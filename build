@@ -21,13 +21,13 @@ up(){
 }
 
 make_metalava(){
-	make api-stubs-docs
-	make system-api-stubs-docs
-	make test-api-stubs-docs
+	make api-stubs-docs -j14
+	make system-api-stubs-docs -j14
+	make test-api-stubs-docs -j14
 }
 
 make_rom(){
-	make blissify -j30
+	make blissify -j14
 	zip=$(up out/target/product/certus/*zip)
 	echo " "
 	echo "$zip"
