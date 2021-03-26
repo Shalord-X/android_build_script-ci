@@ -14,7 +14,7 @@ ccache -M 20G
 ccache -o compression=true
 ccache -z
 
-up(){
+upload_rom(){
 	mkdir -p ~/.config/rclone
 	echo "$rclone_config" > ~/.config/rclone/rclone.conf
 	time rclone copy out/target/product/certus/*zip remote:/roms -P
@@ -28,11 +28,9 @@ make_metalava(){
 
 make_rom(){
 	make blissify -j8
-	zip=$(up out/target/product/certus/*zip)
-	echo " "
-	echo "$zip"
 }
 
 make_metalava
 make_rom &
+upload_rom
 sleep 4200 && kill "$!"
