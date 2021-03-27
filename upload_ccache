@@ -10,8 +10,8 @@ com ()
     tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz ccache
 }
 
-time com ccache-bliss-r-certus 1 # Compression level 1, its enough
+time com ccache-rr-8.6.7-certus 1 # Compression level 1, its enough
 
 mkdir -p ~/.config/rclone
-echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
-time rclone copy ccache-bliss-r-certus.tar.gz shalordx:/ccache -P # apon is my rclone config name, ccache/ci2 is where ccache will be saved in my cloud, use yours one
+echo "$rclone_config" > ~/.config/rclone/rclone.conf
+time rclone copy ccache-rr-8.6.7-certus.tar.gz shalordx:/AndroidBuilder/ccache -P
