@@ -5,7 +5,7 @@ cd /tmp/rom # Depends on where source got synced
 
 # Normal build
 . build/envsetup.sh
-lunch bliss_certus-userdebug
+lunch rr_certus-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
@@ -14,10 +14,8 @@ ccache -M 20G
 ccache -o compression=true
 ccache -z
 
-upload_rom(){
-	mkdir -p ~/.config/rclone
-	echo "$rclone_config" > ~/.config/rclone/rclone.conf
-	time rclone copy out/target/product/certus/*zip shalordx:/roms -P
+up(){
+	curl --upload-file $1 https://transfer.sh/
 }
 
 make_metalava(){
@@ -27,10 +25,13 @@ make_metalava(){
 }
 
 make_rom(){
-	make blissify -j16
+	make bacon -j8
+	zip=$(up out/target/product/certus/*zip)
+	echo " "
+	echo "$zip"
 }
 
 make_metalava
 make_rom &
 upload_rom
-sleep 4200 && kill "$!"
+sleep 5200 && kill "$!"
