@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MANIFEST=https://github.com/BlissRoms/platform_manifest.git
-BRANCH=r
+MANIFEST=https://github.com/ResurrectionRemix/platform_manifest.git
+BRANCH=Q
 
 mkdir -p /tmp/rom
 cd /tmp/rom
@@ -15,10 +15,10 @@ git config --global user.email unnamed877@protonmail.com
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # For fix RIL problem in LOS Android Q based ROM
-# rm -rf packages/services/Telephony
-# git clone https://github.com/LineageOS/android_packages_services_Telephony -b lineage-17.1 packages/services/Telephony
+rm -rf packages/services/Telephony
+git clone https://github.com/LineageOS/android_packages_services_Telephony -b lineage-17.1 packages/services/Telephony
 
-git clone https://github.com/unnamed877/android_device_xiaomi_certus -b aex/11rev device/xiaomi/certus
-git clone https://github.com/wulan17/proprietary_vendor_xiaomi -b 11 vendor/xiaomi
+git clone https://github.com/unnamed877/android_device_xiaomi_certus -b rr/ten device/xiaomi/certus
+git clone https://github.com/wulan17/proprietary_vendor_xiaomi -b 10 vendor/xiaomi
 git clone https://gitlab.com/wulan17/prebuilts_gcc_linux-x86_arm_arm-none-linux-gnueabihf -b 9.2 prebuilts/gcc/linux-x86/arm/arm-none-linux-gnueabihf-9.2
 git clone https://github.com/wulan17/android_kernel_xiaomi_mt6765 -b 11-nad kernel/xiaomi/mt6765
