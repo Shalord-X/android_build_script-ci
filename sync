@@ -25,7 +25,7 @@ git clone https://github.com/wulan17/android_kernel_xiaomi_mt6765 -b 11-nad kern
 #git clone https://github.com/LineageOS/android_packages_services_Telephony -b lineage-17.1 packages/services/Telephony
 
 # Codec Patch maybe :p
-cd framework/av
+cd frameworks/av
 git am $(wget -c https://github.com/SamarV-121/android_vendor_extra/blob/lineage-18.1/patches/frameworks/av/0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch)
 
 cd /tmp/rom
