@@ -5,9 +5,6 @@ cd /tmp/rom # Depends on where source got synced
 
 # Normal build
 source build/envsetup.sh
-sed -i "s/wulan17/unnamed877/" kernel/xiaomi/mt6765/arch/arm/configs/cereus_defconfig
-sed -i "s/wulan17/unnamed877/" kernel/xiaomi/mt6765/arch/arm/configs/cactus_defconfig
-source build/envsetup.sh
 lunch cesium_certus-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export CCACHE_DIR=/tmp/ccache
